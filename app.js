@@ -16,9 +16,9 @@ if(userName){
 //Questions
 var questionArray = ['Do I have a dog?', 'Was I in the Army?', 'Am I Married?', 'Am I from Seattle?', 'Do I like to cardio?'];
 //Answers
-var answerArray = [true, true, false, false, false]
+var answerArray = [true, true, false, false, false];
 //List of yes answers
-var listOfYes = ['yes', 'y', 'yea', 'ya', 'yaw', 'yeehaw', 'correct', 'absolutely']
+var listOfYes = ['yes', 'y', 'yea', 'ya', 'yaw', 'yeehaw', 'correct', 'absolutely'];
 
 var userResponse;
 //this variable holds HTML data to build list of questions
@@ -43,7 +43,7 @@ for(var i = 0; i < questionArray.length; i++){
     
   }else{
     alert('You Didn\'t answer that question, but that is ok!');
-    userResponse = "Did not Answer"
+    userResponse = 'Did not Answer';
     questionTextToHTML += '<li style=\'background: yellow;\'>';
   }
   //This line of code takes the variable and converts them to HTML for a list item
