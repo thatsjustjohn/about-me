@@ -1,9 +1,24 @@
-div {
+h2 {
+  align-content: center;
+}
+
+div.results {
   width:345px; 
   margin:0 auto;
   background-color: rgb(212, 212, 212);
 }
 
-h2 {
-  align-content: center;
+div.wrapper{
+  display: inline-block;
+  border: 1px solid
+}
+
+img.small {
+  width: 150px; 
+  display: block;
+}
+
+#results{
+  text-align: center;
+  font-weight: bold;
 }

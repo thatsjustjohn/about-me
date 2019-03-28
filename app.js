@@ -28,6 +28,8 @@ var questionTextToHTML = '';
 var i = 0;
 var attempts = 0; //for attempts on guessing questions
 var numberOfAttempts = 4;
+var correctQuestions = 0; //correct answer counter
+var totalNumOfQuestions = questionArray.length;
 while(i < questionArray.length){
   var completeAnswer = false; //validates when to add questions to HTML
 
@@ -46,6 +48,7 @@ while(i < questionArray.length){
       if((listOfYes.indexOf(userResponse.toLowerCase()) >= 0) === answerArray[i]){
         alert('You, are right!');
         questionTextToHTML += '<li style=\'background: green;\'>';
+        correctQuestions++;
       }else{
         alert('No, that was incorrect');
         questionTextToHTML += '<li style=\'background: red;\'>';
@@ -66,6 +69,7 @@ while(i < questionArray.length){
           //color correct answer
           questionTextToHTML += '<li style=\'background: green;\'>';
           completeAnswer = true; //if they guess correct they would have finished!
+          correctQuestions++;
         }else{
           alert('No, that was incorrect!' +
           ((i === 5) ? ((Number(userResponse)>answerArray[i]) ? ' you guessed too high!' : ' you guessed to low!') : '') +
@@ -119,5 +123,9 @@ while(i < questionArray.length){
     attempts = 0;
   }
 }
+console.log(correctQuestions + ':' + totalNumOfQuestions);
 console.log(questionTextToHTML);
+var resultColor = (correctQuestions/totalNumOfQuestions > .60) ? 'green' : 'red';
+document.getElementById('results').setAttribute('style', `color: ${resultColor};`);
+document.getElementById('results').innerText = `${userName} here are your results ${correctQuestions} : ${totalNumOfQuestions}`;
 document.getElementById('questions').innerHTML = questionTextToHTML;
