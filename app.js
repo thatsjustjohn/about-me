@@ -1,17 +1,21 @@
 'use strict';
 
-var userName = prompt('Hello! What is your name? ');
-
-
-if(userName){
-  alert('Welcome to the site, ' + userName + '\nLets learn a little bit about me!');
-  console.log('Welcome to the site, ' + userName);
-}else{
-  alert('You didn\'t enter a name but that is ok! \nLets learn a little bit about me!');
-  console.log('You didn\'t enter a name but that is ok!');
-}
+setTimeout(function(){
+  //your code here
+  gameStuff();
+}, 1000);
 
 function gameStuff(){
+
+  var userName = prompt('Hello! What is your name? ');
+
+  if(userName){
+    alert('Welcome to the site, ' + userName + '\nLets learn a little bit about me!');
+    console.log('Welcome to the site, ' + userName);
+  }else{
+    alert('You didn\'t enter a name but that is ok! \nLets learn a little bit about me!');
+    console.log('You didn\'t enter a name but that is ok!');
+  }
   /* Arrays */
   //Questions
   var questionArray = ['Do I have a dog?', 'Was I in the Army?', 'Am I Married?', 'Am I from Seattle?', 'Do I like to cardio?', 'What is my favorite number? (Hint: its between 0-∞)', 'What counties have I lived in besides the United States?'];
@@ -47,11 +51,11 @@ function gameStuff(){
       if(i < 5){
         if((listOfYes.indexOf(userResponse.toLowerCase()) >= 0) === answerArray[i]){
           alert('You, are right!');
-          questionTextToHTML += '<li style=\'background: green;\'>';
+          questionTextToHTML += colorListHTML(1);
           correctQuestions++;
         }else{
           alert('No, that was incorrect');
-          questionTextToHTML += '<li style=\'background: red;\'>';
+          questionTextToHTML += colorListHTML(0);
         }
         completeAnswer = true; //only one chance!
       }else if(i === 5 || i === 6){ //evaluating the number guessing
@@ -67,7 +71,7 @@ function gameStuff(){
             alert('You, are right!');
             incorrect = false;
             //color correct answer
-            questionTextToHTML += '<li style=\'background: green;\'>';
+            questionTextToHTML += colorListHTML(1);
             completeAnswer = true; //if they guess correct they would have finished!
             correctQuestions++;
           }else{
@@ -79,7 +83,7 @@ function gameStuff(){
         }
         if(incorrect && !(attempts < numberOfAttempts)){
           //color incorrect answer
-          questionTextToHTML += '<li style=\'background: red;\'>';
+          questionTextToHTML += colorListHTML(0);
           //after all failed attempts
           completeAnswer = true; //set to true this would be completed
         }
@@ -94,7 +98,7 @@ function gameStuff(){
       if((i===5 || i===6) && attempts < numberOfAttempts){
         attempts++;
       }else{
-        questionTextToHTML += '<li style=\'background: yellow;\'>';
+        questionTextToHTML += colorListHTML(2);
         //if we get here these didn't answer or didn't answer on the final question
         completeAnswer = true;
       }
@@ -129,4 +133,14 @@ function gameStuff(){
   document.getElementById('questions').innerHTML = questionTextToHTML;
 }
 
-gameStuff();
+//0 is wrong 1 is correct 2 is unanswered  This styles the list items accordingly
+function colorListHTML(colorCode){
+  if(colorCode === 0){
+    return '<li style=\'background: red;\'>';
+  }else if(colorCode === 1){
+    return '<li style=\'background: green;\'>';
+  }else{
+    return '<li style=\'background: yellow;\'>';
+  }
+
+}
