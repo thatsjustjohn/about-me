@@ -16,6 +16,24 @@ div.wrapper{
   border: 1px solid
 }
 
+div.header_image{
+  margin-bottom: -120px;
+  height: 420px;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.page_content{
+  max-width: 840px;
+  background: rgb(212, 212, 212);
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 40px 80px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
 img.small {
   width: 150px; 
   display: block;
