@@ -1,11 +1,13 @@
 'use strict';
 
+
+//1 second delay to render HTML before executing javascript
 setTimeout(function(){
   //your code here
-  gameStuff();
+  websiteGameFunctionality();
 }, 1000);
 
-function gameStuff(){
+function websiteGameFunctionality(){
 
   var userName = prompt('Hello! What is your name? ');
 
