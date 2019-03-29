@@ -5,7 +5,13 @@
 This page will regularly be updated and more details of the changes / updates / future work will be posted here.
 
 
+## Paired Programming
 
+Part of this assignment was done with paired programming.
+
+Driver = [Kent Ketter](https://github.com/KKetter/)
+
+Navigator = [John Winters](https://github.com/thatsjustjohn/)
 
 ## Installation / Running / Use
 
